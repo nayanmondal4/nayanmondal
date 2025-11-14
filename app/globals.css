@@ -1,0 +1,221 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 346 77% 49%;
+    --primary-foreground: 355 100% 97%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 346 77% 49%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 346 77% 49%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 346 77% 49%;
+    --primary-foreground: 355 100% 97%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 346 77% 49%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 346 77% 49%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-500 to-blue-700 bg-clip-text text-transparent;
+}
+
+/* Section transitions */
+.section-transition {
+  transition: all 0.5s ease-in-out;
+}
+
+/* Hover animations */
+.hover-card {
+  transition: all 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.1), 0 8px 10px -6px rgba(59, 130, 246, 0.1);
+}
+
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-glow {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Animated gradient background */
+.bg-300\% {
+  background-size: 300% 300%;
+}
+
+.animate-gradient-shift {
+  animation: gradient-shift 3s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* THEME OVERRIDES: switch rose/red palette to blue/violet without touching components */
+:root {
+  /* Primary tokens (HSL) for Tailwind CSS variables */
+  --primary: 221 83% 53%; /* blue-600 */
+  --primary-foreground: 0 0% 100%;
+  --accent: 262 83% 58%; /* violet-600 */
+  --accent-foreground: 0 0% 100%;
+  --ring: 221 83% 53%;
+}
+
+.dark {
+  --primary: 221 83% 53%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 262 83% 58%;
+  --accent-foreground: 0 0% 100%;
+  --ring: 221 83% 53%;
+}
+
+/* Utility overrides for common rose/red classes used across components */
+.text-rose-500 { color: #3b82f6 !important; } /* blue-500 */
+.text-rose-400 { color: #60a5fa !important; } /* blue-400 */
+.text-rose-300 { color: #93c5fd !important; } /* blue-300 */
+.text-rose-200 { color: #bfdbfe !important; }
+.text-rose-500\/10 { color: rgba(59,130,246,0.1) !important; }
+.text-rose-500\/20 { color: rgba(59,130,246,0.2) !important; }
+.text-rose-500\/50 { color: rgba(59,130,246,0.5) !important; }
+.bg-rose-500 { background-color: #3b82f6 !important; }
+.bg-rose-500\/5 { background-color: rgba(59,130,246,0.05) !important; }
+.border-rose-500 { border-color: #3b82f6 !important; }
+.bg-rose-500\/10 { background-color: rgba(59,130,246,0.1) !important; }
+.bg-rose-500\/20 { background-color: rgba(59,130,246,0.2) !important; }
+.bg-rose-500\/30 { background-color: rgba(59,130,246,0.3) !important; }
+.bg-rose-600\/10 { background-color: rgba(59,130,246,0.1) !important; }
+.bg-rose-700\/10 { background-color: rgba(59,130,246,0.1) !important; }
+.bg-rose-800\/10 { background-color: rgba(59,130,246,0.1) !important; }
+.border-rose-500\/10 { border-color: rgba(59,130,246,0.1) !important; }
+.border-rose-500\/20 { border-color: rgba(59,130,246,0.2) !important; }
+.border-rose-500\/30 { border-color: rgba(59,130,246,0.3) !important; }
+
+/* Gradient utilities */
+.from-rose-500 {
+  --tw-gradient-from: #3b82f6 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(59 130 246 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.from-rose-500\/20 {
+  --tw-gradient-from: rgba(59, 130, 246, 0.2) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(59 130 246 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.to-red-700 { --tw-gradient-to: #1d4ed8 var(--tw-gradient-to-position); } /* blue-700 */
+.to-red-800 { --tw-gradient-to: #1e40af var(--tw-gradient-to-position); } /* blue-800 */
+.bg-red-700 { background-color: #1d4ed8 !important; }
+.text-red-700 { color: #1d4ed8 !important; }
+
+
+/* Smooth transitions */
+.smooth-transition {
+  transition: all 0.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+/* Magnetic effect */
+.magnetic-effect {
+  transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+/* Glare effect */
+.glare-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.glare-effect::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  transform: rotate(30deg);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glare-effect:hover::after {
+  opacity: 1;
+}
+
+/* Parallax effect */
+.parallax-container {
+  perspective: 1000px;
+  overflow: hidden;
+}
+
+.parallax-element {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
