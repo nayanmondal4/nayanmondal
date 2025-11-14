@@ -207,7 +207,7 @@ export default function Hero() {
                 size="lg"
                 className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white border-0 rounded-full px-8 py-6 text-lg font-medium transition-transform hover:scale-105 shadow-[0_0_15px_rgba(59,130,246,0.5)]"
               >
-                <Link href="https://wa.me/+916005203781" target="_blank" rel="noopener noreferrer">
+                <Link href="https://wa.me/916005203781" target="_blank" rel="noopener noreferrer">
                   <motion.span
                     className="flex items-center"
                     whileHover={{ x: 5 }}
