@@ -380,7 +380,7 @@ export default function About() {
             <p className="text-gray-400 italic">
               I write code with future me in mind, even though I know he'll still have a few complaints.
             </p>
-            <p className="text-blue-500 mt-2">- Nayan Monal</p>
+            <p className="text-blue-500 mt-2">- Nayan Mondal</p>
           </div>
         </motion.div>
       </div>
